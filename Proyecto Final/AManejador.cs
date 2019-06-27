@@ -12,14 +12,19 @@ namespace Proyecto_Final
         public static int ContPerito = 0;
         public static int ContFuerzasEspeciales=0;
         public static int ContOficiales=0;
-        IEfectivoDeGot _sucesor;
-        string nombre;
+       IEfectivoDeGot _sucesor;
+        AManejador Susesor;
+       string nombre;
+        private IEfectivoDeGot sucesor;
 
-   //     protected string _nombre;
-   //     protected AManejador sucesor;
-        
+        protected AManejador(IEfectivoDeGot Sucesor)
+        {
+            this.sucesor = Susesor;
+        }
 
-        public AManejador(string Nombre ,IEfectivoDeGot sucesor)
+
+
+        protected AManejador(string Nombre ,IEfectivoDeGot sucesor)
         {
             this.nombre = Nombre;
             this._sucesor= sucesor;
