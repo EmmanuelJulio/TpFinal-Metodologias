@@ -9,23 +9,23 @@ namespace Proyecto_Final
     class ConOficiales : AManejador
     {
         string nombre;
-        public ConOficiales(string nombre, AManejador sucesor) : base(sucesor)
+        public ConOficiales(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
             
-            this.nombre = _nombre;
+            this.nombre = nombre;
         }
         override public void DenunciaAccidente()
         {
             if (ContPolicia<2)
             {
                 ContPolicia++;
-                Console.WriteLine("Oficial Accidente faltan refuersos");
+                Console.WriteLine("Oficial "+nombre+ " llego al Accidente pero aun faltan refuersos");
                 base.DenunciaAccidente();
             }
             else {
                 if (ContPolicia > 2)
                 {
-                    Console.WriteLine("Oficial Accidente");
+                    Console.WriteLine("Resolviendo el crimen");
                     ContPolicia++;
                     if (ContPerito < 1)
                     {

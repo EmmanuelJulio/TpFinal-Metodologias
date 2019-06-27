@@ -8,6 +8,8 @@ namespace Proyecto_Final
 {
     class ConFuerzasEspeciales : AManejador
     {
+        private string nombre;
+
         public ConFuerzasEspeciales(AManejador sucesor) : base(sucesor)
         {
         }

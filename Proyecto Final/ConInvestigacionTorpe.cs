@@ -8,6 +8,8 @@ namespace Proyecto_Final
 {
     class ConInvestigacionTorpe : AbsInvestigacion
     {
+        private string nombre;
+
         public override void entrevistaTestigos()
         {
             Console.WriteLine("Se consulta los testigos de a grupos en un bar");

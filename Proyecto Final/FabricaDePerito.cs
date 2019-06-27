@@ -8,6 +8,11 @@ namespace Proyecto_Final
 {
     class FabricaDePerito : FabricaDeEfectivos
     {
+        public FabricaDePerito()
+        {
+            throw new System.NotImplementedException();
+        }
+
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             return null;

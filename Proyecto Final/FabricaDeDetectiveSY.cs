@@ -8,6 +8,11 @@ namespace Proyecto_Final
 {
     class FabricaDeDetectiveSY : FabricaDeEfectivos
     {
+        public FabricaDeDetectiveSY()
+        {
+            throw new System.NotImplementedException();
+        }
+
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
            

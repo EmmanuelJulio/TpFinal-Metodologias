@@ -8,6 +8,11 @@ namespace Proyecto_Final
 {
     class FabricaDeFuerzaEspecial : FabricaDeEfectivos
     {
+        public FabricaDeFuerzaEspecial()
+        {
+            throw new System.NotImplementedException();
+        }
+
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             return null;

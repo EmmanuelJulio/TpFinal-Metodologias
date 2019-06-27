@@ -8,6 +8,8 @@ namespace Proyecto_Final
 {
     class ConDetectiveTorpe : AbsDectective
     {
+        private string nombre;
+
         public ConDetectiveTorpe(AManejador sucesor) : base(sucesor)
         {
             investigacion = new ConInvestigacionTorpe();

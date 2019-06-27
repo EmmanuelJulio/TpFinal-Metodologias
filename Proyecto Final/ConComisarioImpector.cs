@@ -8,9 +8,8 @@ namespace Proyecto_Final
 {
     class ConComisarioImpector : AManejador
     {
-        
+        private string nombre;
 
-        
         public ConComisarioImpector(string nombre,AManejador sucesor) : base(sucesor)
         {
         }

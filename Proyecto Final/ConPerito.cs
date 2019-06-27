@@ -9,10 +9,10 @@ namespace Proyecto_Final
     class ConPerito : AManejador
     {
         string nombre;
-        public ConPerito(string nombre,AManejador sucesor) : base(((AManejador)sucesor))
+        public ConPerito(string nombre,IEfectivoDeGot sucesor) : base(sucesor)
         {
             
-            this.nombre = _nombre;
+            this.nombre = nombre;
         }
         override public void DenunciaRobo()
         {
@@ -23,7 +23,7 @@ namespace Proyecto_Final
             if (ContPerito < 1)
             {
                 ContPerito++;
-                Console.WriteLine("Perito llego al accidente Accidente ");
+                Console.WriteLine("Perito "+nombre+" llego al accidente Accidente ");
                 base.DenunciaAccidente();
             }
             else

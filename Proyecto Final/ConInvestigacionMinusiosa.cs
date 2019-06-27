@@ -8,7 +8,8 @@ namespace Proyecto_Final
 {
     class ConInvestigacionMinusiosa : AbsInvestigacion
     {
-        
+        private string nombre;
+
         public override void entrevistaTestigos()
         {
             Console.WriteLine("Entrevestando testigos de a uno por ves ,en un cuarto cerrado sin celulares cerca");

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Proyecto_Final.AbsDectective" Collapsed="true">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>AbsDectective.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.AbsInvestigacion" Collapsed="true">
+    <Position X="8" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAREABAAAAAAAAAAAAQAAABA=</HashCode>
+      <FileName>AbsInvestigacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.AManejador">
+    <Position X="13" Y="3.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACBICAAAAAAAAAAAAAABAAIAAIAAAAAAEAQAAALAAAA=</HashCode>
+      <FileName>AManejador.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="Proyecto_Final.ConComisarioImpector" Collapsed="true">
+    <Position X="5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConComisarioImpector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.ConDetectiveMeticuloso" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConDetectiveMeticuloso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.ConDetectiveTorpe" Collapsed="true">
+    <Position X="8" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConDetectiveTorpe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.ConFuerzasEspeciales" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConFuerzasEspeciales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.ConInvestigacionMinusiosa" Collapsed="true">
+    <Position X="6.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAQEABAAAAAAAAAAAAQAAABA=</HashCode>
+      <FileName>ConInvestigacionMinusiosa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.ConInvestigacionTorpe" Collapsed="true">
+    <Position X="9" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAQEABAAAAAAAAAAAAQAAABA=</HashCode>
+      <FileName>ConInvestigacionTorpe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.ConOficiales" Collapsed="true">
+    <Position X="7" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBIAAAAAAAAAACAAAAAAAAAAIAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>ConOficiales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.ConPerito" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConPerito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.ConDectectConPoliciaCientificaive" Collapsed="true">
+    <Position X="11.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConPoliciaCientifica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeCientifica">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeCientifica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeComisario">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeComisario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeDetectiveD">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeDetectiveD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeDetectiveM">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeDetectiveM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeDetectiveSY">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeDetectiveSY.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeEfectivos" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeEfectivos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeFuerzaEspecial">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeFuerzaEspecial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeOficial">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeOficial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDeOperador">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDeOperador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.FabricaDePerito">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabricaDePerito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proyecto_Final.Program" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAJAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Proyecto_Final.IEfectivoDeGot" Collapsed="true">
+    <Position X="9.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBIAAAAAAAAAAAAAAAAAAAAAIAAAAAAEAQAAAAAAAA=</HashCode>
+      <FileName>IefectivoDeGot.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

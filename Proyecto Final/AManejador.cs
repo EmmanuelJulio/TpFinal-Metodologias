@@ -10,21 +10,25 @@ namespace Proyecto_Final
     {
         public static int ContPolicia=0;
         public static int ContPerito = 0;
-
+        public static int ContFuerzasEspeciales=0;
+        public static int ContOficiales=0;
         IEfectivoDeGot _sucesor;
-        protected string _nombre;
-        protected AManejador sucesor;
+        string nombre;
 
-        public  AManejador(string Nombre ,AManejador sucesor)
+   //     protected string _nombre;
+   //     protected AManejador sucesor;
+        
+
+        public AManejador(string Nombre ,IEfectivoDeGot sucesor)
         {
-            this._nombre = Nombre;
+            this.nombre = Nombre;
             this._sucesor= sucesor;
         }
 
-        protected AManejador(AManejador sucesor)
-        {
-            this.sucesor = sucesor;
-        }
+        //protected AManejador(AManejador sucesor)
+        //{
+        //    this.sucesor = sucesor;
+        //}
 
         virtual public void DenunciaAccidente()
         {
