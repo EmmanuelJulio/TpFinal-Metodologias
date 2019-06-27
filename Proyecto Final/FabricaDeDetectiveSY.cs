@@ -10,8 +10,7 @@ namespace Proyecto_Final
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            // Detective que lleva a cabo una investigación al estilo Scotland Yard
-            // Deberá usar la clase InvestigacionAlEstiloScotlandYard provista más abajo
+           
             return null;
         }
     }

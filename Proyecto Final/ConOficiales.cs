@@ -8,8 +8,11 @@ namespace Proyecto_Final
 {
     class ConOficiales : AManejador
     {
-        public ConOficiales(IEfectivoDeGot sucesor) : base(sucesor)
+        string nombre;
+        public ConOficiales(string nombre, AManejador sucesor) : base(sucesor)
         {
+            
+            this.nombre = _nombre;
         }
         override public void DenunciaAccidente()
         {
@@ -20,7 +23,7 @@ namespace Proyecto_Final
                 base.DenunciaAccidente();
             }
             else {
-                if (ContPolicia == 2)
+                if (ContPolicia > 2)
                 {
                     Console.WriteLine("Oficial Accidente");
                     ContPolicia++;

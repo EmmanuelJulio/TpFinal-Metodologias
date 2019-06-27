@@ -8,8 +8,11 @@ namespace Proyecto_Final
 {
     class ConPerito : AManejador
     {
-        public ConPerito(IEfectivoDeGot sucesor) : base(sucesor)
+        string nombre;
+        public ConPerito(string nombre,AManejador sucesor) : base(((AManejador)sucesor))
         {
+            
+            this.nombre = _nombre;
         }
         override public void DenunciaRobo()
         {

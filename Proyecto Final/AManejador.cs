@@ -12,10 +12,20 @@ namespace Proyecto_Final
         public static int ContPerito = 0;
 
         IEfectivoDeGot _sucesor;
-        public  AManejador(IEfectivoDeGot sucesor)
+        protected string _nombre;
+        protected AManejador sucesor;
+
+        public  AManejador(string Nombre ,AManejador sucesor)
         {
+            this._nombre = Nombre;
             this._sucesor= sucesor;
         }
+
+        protected AManejador(AManejador sucesor)
+        {
+            this.sucesor = sucesor;
+        }
+
         virtual public void DenunciaAccidente()
         {
             if (_sucesor != null)

@@ -8,9 +8,15 @@ namespace Proyecto_Final
 {
     class ConComisarioImpector : AManejador
     {
-        public ConComisarioImpector(AManejador sucesor) : base(sucesor)
+        
+
+        
+        public ConComisarioImpector(string nombre,AManejador sucesor) : base(sucesor)
         {
         }
+
+        
+
         override public void DenunciaRobo()
         {
             if (true)

@@ -10,7 +10,8 @@ namespace Proyecto_Final
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            return new ConOficiales(siguiente);
+            ConOficiales cp = new ConOficiales(nombre, ((AManejador)siguiente));
+            return cp;
         }
     }
 

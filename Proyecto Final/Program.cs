@@ -78,11 +78,16 @@ namespace Proyecto_Final
 
             //Console.Write("Programa finalizado correctamente . . . ");
             //Console.ReadKey(true);
-            IEfectivoDeGot ef = new ConOficiales(null);
-             ef = new ConOficiales(ef);
-             ef = new ConOficiales(ef);
-             ef = new ConPerito(ef);
-            ef = new ConOficiales(ef);
+
+
+            ///esta parte la hice para
+            ///ver que Chain Of responsability funcione bien
+            ///
+            AManejador ef = new ConOficiales(null,null);
+             ef = new ConOficiales("Pepe",ef);
+             ef = new ConOficiales("Francisco",ef);
+             ef = new ConPerito("Elias",ef);
+            ef = new ConOficiales("JOSE",ef);
 
             ef.DenunciaAccidente();
             Console.ReadKey();

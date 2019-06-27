@@ -10,7 +10,9 @@ namespace Proyecto_Final
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            return null;
+            ConDectectConPoliciaCientificaive CPCientifica = new ConDectectConPoliciaCientificaive();
+            return ((IEfectivoDeGot)CPCientifica);
+
         }
     }
 }
