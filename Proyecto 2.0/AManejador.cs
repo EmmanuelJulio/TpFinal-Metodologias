@@ -17,18 +17,19 @@ namespace Proyecto_2._0
        
         string nombre;
         AManejador _manejador = null;
+        IEfectivoDeGot Efectivo;
 
-        protected AManejador(AManejador Sucesor)
+        protected AManejador(IEfectivoDeGot Sucesor)
         {
-            this._manejador =Sucesor;
+            this.Efectivo =Sucesor;
         }
 
 
 
-        protected AManejador(string Nombre ,AManejador sucesor)
+        protected AManejador(string Nombre ,IEfectivoDeGot sucesor)
         {
             this.nombre = Nombre;
-            this._manejador = sucesor;
+            this.Efectivo = sucesor;
         }
 
         //protected AManejador(AManejador sucesor)
@@ -38,7 +39,7 @@ namespace Proyecto_2._0
 
         virtual public void DenunciaAccidente()
         {
-            if (_manejador != null)
+            if (Efectivo != null)
             {
                 if (SeresolvioElProblema)
                 {
@@ -46,7 +47,7 @@ namespace Proyecto_2._0
                 }
                 else
                 {
-                    _manejador.DenunciaAccidente();
+                    Efectivo.DenunciaAccidente();
                 }
             }
             else
@@ -57,9 +58,9 @@ namespace Proyecto_2._0
 
         virtual public void DenunciaAmenazadeBomba()
         {
-            if (_manejador != null)
+            if (Efectivo != null)
             {
-                _manejador.DenunciaAmenazadeBomba();
+                Efectivo.DenunciaAmenazadeBomba();
             }
             else
             {
@@ -69,9 +70,9 @@ namespace Proyecto_2._0
 
         virtual public void DenunciaAsesinato()
         {
-            if (_manejador != null)
+            if (Efectivo != null)
             {
-                _manejador.DenunciaAsesinato();
+                Efectivo.DenunciaAsesinato();
             }
             else
             {
@@ -81,9 +82,9 @@ namespace Proyecto_2._0
 
         virtual public void DenunciaDisturbiosCallejeros()
         {
-            if (_manejador != null)
+            if (Efectivo != null)
             {
-                _manejador.DenunciaDisturbiosCallejeros();
+                Efectivo.DenunciaDisturbiosCallejeros();
             }
             else
             {
@@ -93,9 +94,9 @@ namespace Proyecto_2._0
 
         virtual public void DenunciaRobo()
         {
-            if (_manejador != null)
+            if (Efectivo != null)
             {
-                _manejador.DenunciaRobo();
+                Efectivo.DenunciaRobo();
             }
             else
             {
@@ -105,9 +106,9 @@ namespace Proyecto_2._0
 
         virtual public void DenunciaSecuestro()
         {
-            if (_manejador != null)
+            if (Efectivo != null)
             {
-                _manejador.DenunciaSecuestro();
+                Efectivo.DenunciaSecuestro();
             }
             else
             {

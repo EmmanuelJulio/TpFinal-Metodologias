@@ -68,7 +68,7 @@ namespace Proyecto_2._0
     {
         private string nombre;
 
-        public ConOficialAtencion(string nombre, AManejador sucesor) : base(sucesor)
+        public ConOficialAtencion(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
         }
 
@@ -91,7 +91,7 @@ namespace Proyecto_2._0
     class ConOficiales : AManejador
     {
         string nombre;
-        public ConOficiales(string nombre, AManejador sucesor) : base(sucesor)
+        public ConOficiales(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
 
             this.nombre = nombre;

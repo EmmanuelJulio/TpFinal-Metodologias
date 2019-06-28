@@ -134,10 +134,10 @@ namespace Proyecto_2._0
             ef = new ConOficiales("Francisco", ef);
             ef = new ConPerito("Elias", ef);
             ef = new ConOficiales("JOSE", ef);
+
+
             GenerarDenuncias(ef);
-            GenerarDenuncias(ef);
-            GenerarDenuncias(ef);
-            GenerarDenuncias(ef);
+            
 
             Console.ReadKey();
         }
