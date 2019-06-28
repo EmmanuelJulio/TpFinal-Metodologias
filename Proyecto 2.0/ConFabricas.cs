@@ -16,6 +16,7 @@ namespace Proyecto_2._0
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
+            ConDectectConPoliciaCientificaive of = new ConDectectConPoliciaCientificaive(nombre, siguiente);
             return null;
         }
     }
