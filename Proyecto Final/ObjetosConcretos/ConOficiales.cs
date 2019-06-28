@@ -9,7 +9,7 @@ namespace Proyecto_Final
     class ConOficiales : AManejador
     {
         string nombre;
-        public ConOficiales(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
+        public ConOficiales(string nombre, AManejador sucesor) : base(sucesor)
         {
             
             this.nombre = nombre;
@@ -23,13 +23,14 @@ namespace Proyecto_Final
                 base.DenunciaAccidente();
             }
             else {
-                if (ContPolicia > 2)
+                if (ContPolicia == 2)
                 {
-                    Console.WriteLine("Resolviendo el crimen");
+                    Console.WriteLine("Con la llegada del oficial "+nombre+" ya hAY TRES OFICIALES");
                     ContPolicia++;
-                    if (ContPerito < 1)
+                    if (ContPerito == 1)
                     {
-                        Console.WriteLine("ya hAY TRES OFICIALES FALTAN PERITOS");
+                        Console.WriteLine("Resolviendo el crimen con la ayuda del perito");
+                        SeresolvioElProblema = true;
                         base.DenunciaAccidente();
 
                     }

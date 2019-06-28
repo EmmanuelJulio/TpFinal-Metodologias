@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto_Final
+namespace Proyecto_2._0
 {
      abstract class AManejador : IEfectivoDeGot
     {

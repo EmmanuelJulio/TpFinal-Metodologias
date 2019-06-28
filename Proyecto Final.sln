@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy", "..\..\..\..\Deskto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "..\..\..\..\Desktop\Adapter\Adapter.csproj", "{365B3414-63C3-47DB-A6DE-67A5EFD1102A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto 2.0", "Proyecto 2.0\Proyecto 2.0.csproj", "{A529D618-44B5-44B0-831E-2691C5F98D07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{365B3414-63C3-47DB-A6DE-67A5EFD1102A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{365B3414-63C3-47DB-A6DE-67A5EFD1102A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{365B3414-63C3-47DB-A6DE-67A5EFD1102A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A529D618-44B5-44B0-831E-2691C5F98D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A529D618-44B5-44B0-831E-2691C5F98D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A529D618-44B5-44B0-831E-2691C5F98D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A529D618-44B5-44B0-831E-2691C5F98D07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

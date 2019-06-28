@@ -9,7 +9,7 @@ namespace Proyecto_Final
     class ConPerito : AManejador
     {
         string nombre;
-        public ConPerito(string nombre,IEfectivoDeGot sucesor) : base(sucesor)
+        public ConPerito(string nombre,AManejador sucesor) : base(sucesor)
         {
             
             this.nombre = nombre;

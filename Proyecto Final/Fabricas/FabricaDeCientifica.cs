@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Final
 {
-    class FabricaDePerito : FabricaDeEfectivos
+    class FabricaDeCientifica : FabricaDeEfectivos
     {
-        public FabricaDePerito()
+        public FabricaDeCientifica()
         {
             throw new System.NotImplementedException();
         }
 
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            return null;
+            ConDectectConPoliciaCientificaive CPCientifica = new ConDectectConPoliciaCientificaive();
+           
+            return ((IEfectivoDeGot)CPCientifica);
+
         }
     }
 }

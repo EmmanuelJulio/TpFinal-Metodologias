@@ -48,7 +48,7 @@ namespace Proyecto_Final
         private static void GenerarDenuncias(IEfectivoDeGot eg)
         {
             // Complete este método con las siguientes denuncias y sus correspondientes acciones
-
+           
             // Robo
 
             // Asesinato
@@ -88,6 +88,8 @@ namespace Proyecto_Final
              ef = new ConOficiales("Francisco",ef);
              ef = new ConPerito("Elias",ef);
             ef = new ConOficiales("JOSE",ef);
+
+           
 
             ef.DenunciaAccidente();
             Console.ReadKey();
