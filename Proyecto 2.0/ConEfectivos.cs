@@ -23,8 +23,6 @@ namespace Proyecto_2._0
                 base.DenunciaRobo();
             }
         }
-        
-
     }
     #endregion
     #region
@@ -79,7 +77,7 @@ namespace Proyecto_2._0
         private IEfectivoDeGot Susesor;
         public ConOficialAtencion(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
-            this.Susesor = sucesor;
+            this.nombre = nombre;
         }
         override public void DenunciaRobo()
         {
@@ -94,13 +92,13 @@ namespace Proyecto_2._0
         }
         override public void DenunciaAccidente()
         {
-            if (Susesor == null)
+            if (SeresolvioElProblema)
             {
-                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudo completar la Denuncia");
+                Console.WriteLine("aqui oficial de atencion" + nombre + " Su problema fue resuelto exitosamente");
             }
             else
             {
-                base.DenunciaAccidente();
+                Console.WriteLine("aqui oficial de atencion " + nombre + " lamento que no se pudo completar la Denuncia");
             }
         }
         public override void DenunciaAmenazadeBomba()
@@ -164,49 +162,52 @@ namespace Proyecto_2._0
         }
         override public void DenunciaAccidente()
         {
-            if (ContPolicia < 2)
+            if (SeresolvioElProblema==false)
             {
-                ContPolicia++;
-                Console.WriteLine("Oficial " + nombre + " llego al Accidente pero aun faltan refuersos");
-                base.DenunciaAccidente();
-            }
-            else
-            {
-                if (ContPolicia == 2)
+                if (ContPolicia < 2)
                 {
-                    Console.WriteLine("Con la llegada del oficial " + nombre + " ya hAY TRES OFICIALES");
                     ContPolicia++;
-                    if (ContPerito == 1)
-                    {
-                        Console.WriteLine("Resolviendo el crimen con la ayuda del perito");
-                    }
-                    if (ConPoliciaCientifica == 1)
-                    {
-                        Console.WriteLine("Resolviendo el crimen con la ayuda del Policia cientifico precente");
-                        
-                    }
-                    if (ContPerito == 0 & ConPoliciaCientifica == 0)
-                    {
-                        Console.WriteLine("Devemos esperar por un perito o un Policia cientifico");
-                        base.DenunciaAccidente();
-                    }
+                    Console.WriteLine("Oficial " + nombre + " llego al Accidente pero aun faltan refuersos");
+                    base.DenunciaAccidente();
                 }
                 else
                 {
-                    if (SeresolvioElProblema != true)
+                    if (ContPolicia == 2)
                     {
+                        Console.WriteLine("Con la llegada del oficial " + nombre + " ya hAY TRES OFICIALES");
+                        ContPolicia++;
+                        if (ContPerito == 1)
+                        {
+                            Console.WriteLine("Resolviendo el crimen con la ayuda del perito");
+                        }
+                        if (ConPoliciaCientifica == 1)
+                        {
+                            Console.WriteLine("Resolviendo el crimen con la ayuda del Policia cientifico precente");
 
+                        }
+                        if (ContPerito == 0 & ConPoliciaCientifica == 0)
+                        {
+                            Console.WriteLine("Devemos esperar por un perito o un Policia cientifico");
+
+                        }
                     }
                     else
                     {
-                        base.DenunciaAccidente();
+                        if (SeresolvioElProblema != true)
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
+
                     }
-                    
-                }
-      
 
+                   
+                } 
             }
-
+            base.DenunciaAccidente();
         }
         override public void DenunciaAmenazadeBomba()
         {
@@ -249,23 +250,30 @@ namespace Proyecto_2._0
         }
         override public void DenunciaAccidente()
         {
-            if (ContPerito < 1)
+            if (SeresolvioElProblema==false)
             {
-                ContPerito++;
-                Console.WriteLine("Perito " + nombre + " llego al accidente");
-                base.DenunciaAccidente();
-            }
-            else
-            {
+                if (ContPerito < 1)
+                {
+                    ContPerito++;
+                    Console.WriteLine("Perito " + nombre + " llego al accidente");
+
+                }
                 if (ContPolicia < 2)
                 {
                     Console.WriteLine("El Perito ya esta , esperamos mas Ooficiales");
                     Console.ReadKey();
-                    base.DenunciaAccidente();
 
                 }
+                else
+                {
+                    Console.WriteLine("El Perito ya esta resolviendo el caso");
+                    SeresolvioElProblema = true;
+                    
 
+                } 
             }
+            base.DenunciaAccidente();
+
         }
     }
     #endregion
@@ -280,18 +288,22 @@ namespace Proyecto_2._0
         }
         public override void DenunciaAccidente()
         {
-            ConPoliciaCientifica++;
-            Console.WriteLine("Llego " + nombre + " un miembro de la policia cientifica");
-            if (ContPolicia == 3)
+            if (SeresolvioElProblema==false)
             {
-                Console.WriteLine("el caso esta siendo resuelto por el policia cientifico " + nombre);
-                SeresolvioElProblema = true;
+                ConPoliciaCientifica++;
+                Console.WriteLine("Llego " + nombre + " un miembro de la policia cientifica");
+                if (ContPolicia == 3)
+                {
+                    Console.WriteLine("el caso esta siendo resuelto por el policia cientifico " + nombre);
+                    SeresolvioElProblema = true;
+                }
+                else
+                {
+                    Console.WriteLine("Nesesito al menos 3 oficiales para proceder con la investigacion " + nombre);
+
+                } 
             }
-            else
-            {
-                Console.WriteLine("Nesesito al menos 3 oficiales para proceder con la investigacion " + nombre);
-                base.DenunciaAccidente();
-            }
+            base.DenunciaAccidente();
         }
     }
     #endregion

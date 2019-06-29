@@ -20,7 +20,7 @@ namespace Proyecto_2._0
             eg = FabricaDeEfectivos.crear("FuezaEspecial", "Jaime Lannister", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Cersei Lannister", eg);
             eg = FabricaDeEfectivos.crear("Comisario", "Sansa Stark", eg);
-           // eg = FabricaDeEfectivos.crear("Perito", "Robb Stark", eg);
+            eg = FabricaDeEfectivos.crear("Perito", "Robb Stark", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Khal Drogo", eg);
             eg = FabricaDeEfectivos.crear("DetectiveSY", "Sam Tarly", eg);
             eg = FabricaDeEfectivos.crear("FuezaEspecial", "Varys", eg);

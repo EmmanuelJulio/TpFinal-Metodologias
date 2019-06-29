@@ -32,21 +32,24 @@ namespace Proyecto_2._0
         }
         virtual public void DenunciaAccidente()
         {
-            if (Efectivo!=null)
+            if (Efectivo != null)
             {
-                if (SeresolvioElProblema=!true)
-                {
-                    Console.WriteLine("el caso fue resuelto");
-                }
-                else
-                {
+               
+                
                     Efectivo.DenunciaAccidente();
-                }
+               
             }
             else
             {
                 Console.WriteLine("no se pudo antender el accidente");
             }
+            ///
+
+            //if (ContPolicia > 2)
+            //{
+            //    if(ContPerito==1| ConPoliciaCientifica==1)
+            //        Console.WriteLine("el cas")
+            //}
         }
 
         virtual public void DenunciaAmenazadeBomba()
