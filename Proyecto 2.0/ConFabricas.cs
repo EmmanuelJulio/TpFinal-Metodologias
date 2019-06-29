@@ -9,59 +9,68 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             ConOficialAtencion of = new ConOficialAtencion(nombre, siguiente);
-            return null;
+            return of;
         }
     }
     class FabricaDeCientifica : FabricaDeEfectivos
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            ConDectectConPoliciaCientificaive of = new ConDectectConPoliciaCientificaive(nombre, siguiente);
-            return null;
+            
+                ConDectectConPoliciaCientificaive of = new ConDectectConPoliciaCientificaive(nombre, siguiente);
+            return of;
         }
     }
     class FabricaDeOficial : FabricaDeEfectivos
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            return null;
+            ConOficiales of = new ConOficiales(nombre, siguiente);
+            return of;
         }
     }
     class FabricaDeFuerzaEspecial : FabricaDeEfectivos
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            return null;
+            ConFuerzasEspeciales of = new ConFuerzasEspeciales(nombre, siguiente);
+            return of;
         }
     }
     class FabricaDeComisario : FabricaDeEfectivos
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            return null;
+            ConComisarioImpector of = new ConComisarioImpector(nombre, siguiente);
+            return of;
         }
     }
     class FabricaDePerito : FabricaDeEfectivos
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            return null;
+            ConPerito of = new ConPerito(nombre, siguiente);
+            return of;
         }
     }
     class FabricaDeDetectiveM : FabricaDeEfectivos
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
+            ConDetectiveMeticuloso of = new ConDetectiveMeticuloso(nombre, siguiente);
+            return of;
             // Detective que lleva a cabo una investigación minuiciosa 
-            return null;
+            
         }
     }
     class FabricaDeDetectiveD : FabricaDeEfectivos
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
+            ConDetectiveTorpe of = new ConDetectiveTorpe(nombre, siguiente);
+            return of;
             // Detective que lleva a cabo una investigación desprolija
-            return null;
+            
         }
     }
     class FabricaDeDetectiveSY : FabricaDeEfectivos
@@ -70,7 +79,8 @@ namespace Proyecto_2._0
         {
             // Detective que lleva a cabo una investigación al estilo Scotland Yard
             // Deberá usar la clase InvestigacionAlEstiloScotlandYard provista más abajo
-            return null;
+            ConDetectiveSCotlandYard Dsy = new ConDetectiveSCotlandYard(nombre,siguiente);
+            return Dsy;
         }
     }
 }

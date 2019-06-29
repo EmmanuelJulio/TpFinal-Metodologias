@@ -20,7 +20,7 @@ namespace Proyecto_2._0
             eg = FabricaDeEfectivos.crear("FuezaEspecial", "Jaime Lannister", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Cersei Lannister", eg);
             eg = FabricaDeEfectivos.crear("Comisario", "Sansa Stark", eg);
-            eg = FabricaDeEfectivos.crear("Perito", "Robb Stark", eg);
+           // eg = FabricaDeEfectivos.crear("Perito", "Robb Stark", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Khal Drogo", eg);
             eg = FabricaDeEfectivos.crear("DetectiveSY", "Sam Tarly", eg);
             eg = FabricaDeEfectivos.crear("FuezaEspecial", "Varys", eg);
@@ -28,16 +28,16 @@ namespace Proyecto_2._0
             eg = FabricaDeEfectivos.crear("DetectiveD", "Petyr Baelish", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Tywin Lannister", eg);
 
-            /*
-			// Con esta cadena, los robos, asesinatos, secuestros y amenazas de bomba no son atendidos
-			
-			eg	= FabricaDeEfectivos.crear("Operador", "Theon Greyjoy", eg);
-			eg = FabricaDeEfectivos.crear("Cientifica", "Joffrey Baratheon", eg);
-			eg = FabricaDeEfectivos.crear("Oficial", "Aemon Targaryen", eg);
-			eg = FabricaDeEfectivos.crear("FuezaEspecial", "Hodor", eg);
-			eg = FabricaDeEfectivos.crear("FuezaEspecial", "Stannis Baratheon", eg);
-			eg = FabricaDeEfectivos.crear("Oficial", "Robert Baratheon", eg);
-			*/
+
+            // Con esta cadena, los robos, asesinatos, secuestros y amenazas de bomba no son atendidos
+
+            //eg	= FabricaDeEfectivos.crear("Operador", "Theon Greyjoy", eg);
+            //eg = FabricaDeEfectivos.crear("Cientifica", "Joffrey Baratheon", eg);
+            //eg = FabricaDeEfectivos.crear("Oficial", "Aemon Targaryen", eg);
+            //eg = FabricaDeEfectivos.crear("FuezaEspecial", "Hodor", eg);
+            //eg = FabricaDeEfectivos.crear("FuezaEspecial", "Stannis Baratheon", eg);
+            //eg = FabricaDeEfectivos.crear("Oficial", "Robert Baratheon", eg);
+
 
             return eg;
         }
@@ -119,7 +119,7 @@ namespace Proyecto_2._0
 
         public static void Main(string[] args)
         {
-            //IEfectivoDeGot eg = CrearDepartamentoDePolicia();
+            IEfectivoDeGot eg = CrearDepartamentoDePolicia();
 
             //GenerarDenuncias(eg);
 
@@ -129,17 +129,17 @@ namespace Proyecto_2._0
 
             ////
             ///// ///probar chain of responsability
-            AManejador ef = new ConOficiales(null, null);
-            ef = new ConOficiales("Pepe", ef);
-            ef = new ConOficiales("Francisco", ef);
-            ef = new ConPerito("Elias", ef);
-            ef = new ConOficiales("JOSE", ef);
+            //AManejador ef = new ConOficiales(null, null);
+            //ef = new ConOficiales("Pepe", ef);
+            //ef = new ConOficiales("Francisco", ef);
+            //ef = new ConPerito("Elias", ef);
+            //ef = new ConOficiales("JOSE", ef);
 
 
-            GenerarDenuncias(ef);
+            GenerarDenuncias(eg);
             
 
-            Console.ReadKey();
+           Console.ReadKey();
         }
     }
 }

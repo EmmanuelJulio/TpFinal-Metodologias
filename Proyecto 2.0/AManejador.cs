@@ -13,6 +13,8 @@ namespace Proyecto_2._0
         public static int ContPerito = 0;
         public static int ContFuerzasEspeciales=0;
         public static int ContOficiales=0;
+        public static int ConPoliciaCientifica = 0;
+        public static List<IEfectivoDeGot> ListaEfectivos = new List<IEfectivoDeGot>();
         //IEfectivoDeGot _sucesor;
        
         string nombre;
@@ -23,27 +25,18 @@ namespace Proyecto_2._0
         {
             this.Efectivo =Sucesor;
         }
-
-
-
         protected AManejador(string Nombre ,IEfectivoDeGot sucesor)
         {
             this.nombre = Nombre;
             this.Efectivo = sucesor;
         }
-
-        //protected AManejador(AManejador sucesor)
-        //{
-        //    this.sucesor = sucesor;
-        //}
-
         virtual public void DenunciaAccidente()
         {
-            if (Efectivo != null)
+            if (Efectivo!=null)
             {
-                if (SeresolvioElProblema)
+                if (SeresolvioElProblema=!true)
                 {
-                    Console.WriteLine("El problema fue resuelto");
+                    Console.WriteLine("el caso fue resuelto");
                 }
                 else
                 {
@@ -52,7 +45,7 @@ namespace Proyecto_2._0
             }
             else
             {
-                Console.WriteLine("no se pudo antender la amenza debomba");
+                Console.WriteLine("no se pudo antender el accidente");
             }
         }
 

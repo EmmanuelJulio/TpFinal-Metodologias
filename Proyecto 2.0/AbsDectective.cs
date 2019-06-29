@@ -6,12 +6,24 @@ using System.Threading.Tasks;
 
 namespace Proyecto_2._0
 {
-    abstract class AbsDectective : AManejador
+     abstract class AbsDectective : AManejador
     {
-        public AbsDectective(AManejador sucesor) : base(sucesor)
+        protected string nombre;
+        public AbsDectective(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
+            this.nombre = nombre;
         }
+
+        protected AbsDectective(IEfectivoDeGot sucesor) : base(sucesor)
+        {
+            this.sucesor = sucesor;
+        }
+
+       
+
         protected AbsInvestigacion investigacion;
+        private IEfectivoDeGot sucesor;
+
         override public void DenunciaAsesinato()
         {
             Console.WriteLine("Atendiendo Asesinato");

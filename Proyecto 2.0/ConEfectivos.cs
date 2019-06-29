@@ -4,56 +4,63 @@ using System.Text;
 
 namespace Proyecto_2._0
 {
-
+    #region
     class ConComisarioImpector : AManejador
     {
         private string nombre;
 
-        public ConComisarioImpector(string nombre, AManejador sucesor) : base(sucesor)
+        public ConComisarioImpector(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
+            this.nombre = nombre;
         }
-
-
 
         override public void DenunciaRobo()
         {
-            if (true)
+            if (ContPerito != 1)
             {
-                Console.WriteLine("Atendiendo Robo");
+                ListaEfectivos.Add(this);
+                Console.WriteLine("el Comisario inspector "+nombre+" llego a la esena ,aguardando por un perito");
+                base.DenunciaRobo();
             }
         }
-        override public void DenunciaAccidente()
-        {
-            Console.WriteLine("Atendiendo Accidente");
-        }
-
+        
 
     }
+    #endregion
+    #region
     class ConDetectiveMeticuloso : AbsDectective
     {
-        private string nombre;
+        
 
-        public ConDetectiveMeticuloso(AManejador sucesor) : base(sucesor)
+        public ConDetectiveMeticuloso(string nombre,IEfectivoDeGot sucesor) : base(sucesor) 
         {
+            this.nombre = nombre;
+            
             this.investigacion = new ConInvestigacionMinusiosa();
         }
     }
+    #endregion
+    #region
     class ConDetectiveTorpe : AbsDectective
     {
-        private string nombre;
+        
 
-        public ConDetectiveTorpe(AManejador sucesor) : base(sucesor)
+        public ConDetectiveTorpe(string nombre ,IEfectivoDeGot sucesor) : base(sucesor)
         {
+            
             investigacion = new ConInvestigacionTorpe();
         }
 
     }
+    #endregion
+    #region
     class ConFuerzasEspeciales : AManejador
     {
         private string nombre;
 
-        public ConFuerzasEspeciales(AManejador sucesor) : base(sucesor)
+        public ConFuerzasEspeciales(string nombre ,IEfectivoDeGot sucesor) : base(sucesor)
         {
+            this.nombre = nombre;
         }
         override public void DenunciaSecuestro()
         {
@@ -64,30 +71,89 @@ namespace Proyecto_2._0
             Console.WriteLine("Atendiendo Amenaza de Bomba");
         }
     }
+    #endregion
+    #region
     class ConOficialAtencion : AManejador
     {
         private string nombre;
-
+        private IEfectivoDeGot Susesor;
         public ConOficialAtencion(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
+            this.Susesor = sucesor;
         }
-
-
-
         override public void DenunciaRobo()
         {
-            if (true)
+            if (Susesor==null)
             {
-                Console.WriteLine("Atendiendo Robo");
+                Console.WriteLine("aqui oficial de atencion"+nombre+" lamento que no se pudo completar la peticion");
+            }
+            else
+            {
+                base.DenunciaRobo();
             }
         }
         override public void DenunciaAccidente()
         {
-            Console.WriteLine("Atendiendo Accidente");
+            if (Susesor == null)
+            {
+                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudo completar la Denuncia");
+            }
+            else
+            {
+                base.DenunciaAccidente();
+            }
         }
+        public override void DenunciaAmenazadeBomba()
+        {
+            if (Susesor == null)
+            {
+                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudo completar la amenanaza de bomba");
+            }
+            else
+            {
+                base.DenunciaAmenazadeBomba();
+            }
+        }
+        public override void DenunciaAsesinato()
+        {
+            if (Susesor == null )
+            {
+                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudo completar la De nuncia de asecinato");
+            }
+            else
+            {
+                base.DenunciaAsesinato();
+            }
+        }
+        public override void DenunciaDisturbiosCallejeros()
+        {
+            if (Susesor == null)
+            {
+                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudieron completar Los disturbios callejeros");
+            }
+            else
+            {
+                base.DenunciaDisturbiosCallejeros();
+            }
+        }
+        public override void DenunciaSecuestro()
+        {
+            if (Susesor == null)
+            {
+                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudieron completar la peticion de secuestro");
+            }
+            else
+            {
+                base.DenunciaSecuestro();
+            }
+        }
+      
+
 
 
     }
+    #endregion
+    #region
     class ConOficiales : AManejador
     {
         string nombre;
@@ -113,12 +179,31 @@ namespace Proyecto_2._0
                     if (ContPerito == 1)
                     {
                         Console.WriteLine("Resolviendo el crimen con la ayuda del perito");
-                        SeresolvioElProblema = true;
+                    }
+                    if (ConPoliciaCientifica == 1)
+                    {
+                        Console.WriteLine("Resolviendo el crimen con la ayuda del Policia cientifico precente");
+                        
+                    }
+                    if (ContPerito == 0 & ConPoliciaCientifica == 0)
+                    {
+                        Console.WriteLine("Devemos esperar por un perito o un Policia cientifico");
                         base.DenunciaAccidente();
-
                     }
                 }
+                else
+                {
+                    if (SeresolvioElProblema != true)
+                    {
 
+                    }
+                    else
+                    {
+                        base.DenunciaAccidente();
+                    }
+                    
+                }
+      
 
             }
 
@@ -149,12 +234,13 @@ namespace Proyecto_2._0
             Console.WriteLine("Atendiendo Secuestro");
         }
     }
+    #endregion
+    #region
     class ConPerito : AManejador
     {
         string nombre;
-        public ConPerito(string nombre, AManejador sucesor) : base(sucesor)
+        public ConPerito(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
-
             this.nombre = nombre;
         }
         override public void DenunciaRobo()
@@ -166,7 +252,7 @@ namespace Proyecto_2._0
             if (ContPerito < 1)
             {
                 ContPerito++;
-                Console.WriteLine("Perito " + nombre + " llego al accidente Accidente ");
+                Console.WriteLine("Perito " + nombre + " llego al accidente");
                 base.DenunciaAccidente();
             }
             else
@@ -182,7 +268,44 @@ namespace Proyecto_2._0
             }
         }
     }
-    class ConDectectConPoliciaCientificaive
+    #endregion
+    #region
+    class ConDectectConPoliciaCientificaive : AManejador
     {
+        string nombre;
+        public ConDectectConPoliciaCientificaive(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
+        {
+
+            this.nombre = nombre;
+        }
+        public override void DenunciaAccidente()
+        {
+            ConPoliciaCientifica++;
+            Console.WriteLine("Llego " + nombre + " un miembro de la policia cientifica");
+            if (ContPolicia == 3)
+            {
+                Console.WriteLine("el caso esta siendo resuelto por el policia cientifico " + nombre);
+                SeresolvioElProblema = true;
+            }
+            else
+            {
+                Console.WriteLine("Nesesito al menos 3 oficiales para proceder con la investigacion " + nombre);
+                base.DenunciaAccidente();
+            }
+        }
     }
+    #endregion
+    #region
+    class ConDetectiveSCotlandYard : AManejador
+    {
+        string nombre;
+        public ConDetectiveSCotlandYard(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
+        {
+
+            this.nombre = nombre;
+        }
+    }
+    #endregion
+    
+    
 }
