@@ -9,6 +9,7 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             ConOficialAtencion of = new ConOficialAtencion(nombre, siguiente);
+            AManejador.ListaEfectivos.Add(of);
             return of;
         }
     }
@@ -17,7 +18,8 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             
-                ConDectectConPoliciaCientificaive of = new ConDectectConPoliciaCientificaive(nombre, siguiente);
+            ConDectectConPoliciaCientificaive of = new ConDectectConPoliciaCientificaive(nombre, siguiente);
+            AManejador.ListaEfectivos.Add(of);
             return of;
         }
     }
@@ -26,6 +28,7 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             ConOficiales of = new ConOficiales(nombre, siguiente);
+            AManejador.ListaEfectivos.Add(of);
             return of;
         }
     }
@@ -34,6 +37,7 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             ConFuerzasEspeciales of = new ConFuerzasEspeciales(nombre, siguiente);
+            AManejador.ListaEfectivos.Add(of);
             return of;
         }
     }
@@ -42,6 +46,7 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             ConComisarioImpector of = new ConComisarioImpector(nombre, siguiente);
+            AManejador.ListaEfectivos.Add(of);
             return of;
         }
     }
@@ -50,6 +55,7 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             ConPerito of = new ConPerito(nombre, siguiente);
+            AManejador.ListaEfectivos.Add(of);
             return of;
         }
     }
@@ -58,6 +64,7 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             ConDetectiveMeticuloso of = new ConDetectiveMeticuloso(nombre, siguiente);
+            AManejador.ListaEfectivos.Add(of);
             return of;
             // Detective que lleva a cabo una investigación minuiciosa 
             
@@ -68,6 +75,7 @@ namespace Proyecto_2._0
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
             ConDetectiveTorpe of = new ConDetectiveTorpe(nombre, siguiente);
+            AManejador.ListaEfectivos.Add(of);
             return of;
             // Detective que lleva a cabo una investigación desprolija
             
@@ -80,6 +88,7 @@ namespace Proyecto_2._0
             // Detective que lleva a cabo una investigación al estilo Scotland Yard
             // Deberá usar la clase InvestigacionAlEstiloScotlandYard provista más abajo
             ConDetectiveSCotlandYard Dsy = new ConDetectiveSCotlandYard(nombre,siguiente);
+            AManejador.ListaEfectivos.Add(Dsy);
             return Dsy;
         }
     }
