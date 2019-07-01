@@ -4,6 +4,22 @@ using System.Text;
 
 namespace Proyecto_2._0
 {
+    abstract class AbsInvestigacion
+    {
+        public virtual void realizarInvestigacion()
+        {
+            entrevistaTestigos();
+            revisarVictima();
+            entrevistaTestigos();
+            formulaHipotesis();
+            realizaAcusacion();
+        }
+        public abstract void reccorerCrimen();
+        public abstract void revisarVictima();
+        public abstract void entrevistaTestigos();
+        public abstract void formulaHipotesis();
+        public abstract void realizaAcusacion();
+    }
     class InvestigacionAlEstiloScotlandYard
     {
         public void tourCrimeScene()
@@ -62,7 +78,16 @@ namespace Proyecto_2._0
     }
     class ConInvestigacionTorpe : AbsInvestigacion
     {
-        private string nombre;
+        
+
+        public override void realizarInvestigacion()
+        {
+            entrevistaTestigos();
+            revisarVictima();
+            entrevistaTestigos();
+            formulaHipotesis();
+            realizaAcusacion();
+        }
 
         public override void entrevistaTestigos()
         {

@@ -19,14 +19,13 @@ namespace Proyecto_2._0
             this.sucesor = sucesor;
         }
 
-       
-
         protected AbsInvestigacion investigacion;
         private IEfectivoDeGot sucesor;
 
         override public void DenunciaAsesinato()
         {
             Console.WriteLine("Atendiendo Asesinato");
+            investigacion = new ConInvestigacionMinusiosa();
             investigacion.realizarInvestigacion();
         }
     }

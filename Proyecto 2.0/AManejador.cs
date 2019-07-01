@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Proyecto_2._0
 {
@@ -14,7 +15,9 @@ namespace Proyecto_2._0
         public static int ContFuerzasEspeciales=0;
         public static int ContOficiales=0;
         public static int ConPoliciaCientifica = 0;
+        public static int ContComisarioInspector = 0;
         public static List<IEfectivoDeGot> ListaEfectivos = new List<IEfectivoDeGot>();
+        public static IEfectivoDeGot OficialDeAtencion=null;
         //IEfectivoDeGot _sucesor;
        
         string nombre;
@@ -32,83 +35,101 @@ namespace Proyecto_2._0
         }
         virtual public void DenunciaAccidente()
         {
+            Thread.Sleep(1000);
             if (Efectivo != null)
             {
-               
-                
+                if (SeresolvioElProblema == true)
+                {
+                    AManejador.OficialDeAtencion.DenunciaAccidente();
+                }
+                else
+                {
                     Efectivo.DenunciaAccidente();
-               
-            }
-            else
-            {
-                Console.WriteLine("no se pudo antender el accidente");
-            }
-            ///
+                }
 
-            //if (ContPolicia > 2)
-            //{
-            //    if(ContPerito==1| ConPoliciaCientifica==1)
-            //        Console.WriteLine("el cas")
-            //}
+            }
         }
-
         virtual public void DenunciaAmenazadeBomba()
         {
+            Thread.Sleep(1000);
             if (Efectivo != null)
             {
-                Efectivo.DenunciaAmenazadeBomba();
-            }
-            else
-            {
-                Console.WriteLine("no se pudo antender la amenza debomba");
+                if (SeresolvioElProblema == true)
+                {
+                    AManejador.OficialDeAtencion.DenunciaAmenazadeBomba();
+                }
+                else
+                {
+                    Efectivo.DenunciaAmenazadeBomba();
+                }
+
             }
         }
-
         virtual public void DenunciaAsesinato()
         {
+            Thread.Sleep(1000);
             if (Efectivo != null)
             {
-                Efectivo.DenunciaAsesinato();
-            }
-            else
-            {
-                Console.WriteLine("no se pudo antender Asesinato");
-            }
-        }
+                if (SeresolvioElProblema == true)
+                {
+                    AManejador.OficialDeAtencion.DenunciaAsesinato();
+                }
+                else
+                {
+                    Efectivo.DenunciaAsesinato();
+                }
 
+            }
+
+
+        }
         virtual public void DenunciaDisturbiosCallejeros()
         {
+            Thread.Sleep(1000);
             if (Efectivo != null)
             {
-                Efectivo.DenunciaDisturbiosCallejeros();
-            }
-            else
-            {
-                Console.WriteLine("no se pudieron antender Los disturbios callejeros");
+                if (SeresolvioElProblema == true)
+                {
+                    AManejador.OficialDeAtencion.DenunciaDisturbiosCallejeros();
+                }
+                else
+                {
+                    Efectivo.DenunciaDisturbiosCallejeros();
+                }
+
             }
         }
-
         virtual public void DenunciaRobo()
         {
+            Thread.Sleep(1000);
             if (Efectivo != null)
             {
-                Efectivo.DenunciaRobo();
-            }
-            else
-            {
-                Console.WriteLine("no se pudo atender el robo");
-            }
-        }
+                if (SeresolvioElProblema == true)
+                {
+                    AManejador.OficialDeAtencion.DenunciaRobo();
+                }
+                else
+                {
+                    Efectivo.DenunciaRobo();
+                }
 
+            }
+
+        }
         virtual public void DenunciaSecuestro()
         {
+            Thread.Sleep(1000);
             if (Efectivo != null)
             {
-                Efectivo.DenunciaSecuestro();
-            }
-            else
-            {
-                Console.WriteLine("no se pudo atender el secuestro");
+                if (SeresolvioElProblema == true)
+                {
+                    AManejador.OficialDeAtencion.DenunciaSecuestro();
+                }
+                else
+                {
+                    Efectivo.DenunciaSecuestro();
+                }
+
             }
         }
     }

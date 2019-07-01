@@ -139,7 +139,7 @@ namespace Proyecto_2._0
             GenerarDenuncias(eg);
             
 
-           Console.ReadKey();
+          Console.ReadKey();
         }
     }
 }
