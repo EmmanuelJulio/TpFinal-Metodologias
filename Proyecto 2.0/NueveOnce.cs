@@ -137,9 +137,11 @@ namespace Proyecto_2._0
 
 
             GenerarDenuncias(eg);
-            
+            GenerarDenuncias(eg);
+            GenerarDenuncias(eg);
 
-          Console.ReadKey();
+
+            Console.ReadKey();
         }
     }
 }

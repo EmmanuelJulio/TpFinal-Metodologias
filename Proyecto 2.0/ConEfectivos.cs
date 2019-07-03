@@ -42,6 +42,24 @@ namespace Proyecto_2._0
                 base.DenunciaSecuestro();
             }
         }
+        public override void DenunciaDisturbiosCallejeros()
+        {
+            AManejador.OficialesDisturbios.Add(this);
+            int Efectivos = OficialesDisturbios.Count;
+            
+            if (Efectivos<10)
+            {
+                Console.WriteLine("llego el comisario inspector " + nombre + "esperamos refuersos nos faltan " + (10 - Efectivos).ToString()+" para poder continuar");
+                base.DenunciaDisturbiosCallejeros();
+            }
+            else
+            {
+                Console.WriteLine("Con la llegada del comisario " + nombre + " llegaron 10 miembros la situacion esta siendo manejada");
+                SeresolvioElProblema = true;
+                OficialDeAtencion.DenunciaDisturbiosCallejeros();
+                
+            }
+        }
     }
     #endregion
     #region
@@ -52,7 +70,6 @@ namespace Proyecto_2._0
         public ConDetectiveMeticuloso(string nombre,IEfectivoDeGot sucesor) : base(sucesor) 
         {
             this.nombre = nombre;
-            
             this.investigacion = new ConInvestigacionMinusiosa();
         }
         public override void DenunciaAsesinato()
@@ -78,17 +95,18 @@ namespace Proyecto_2._0
     class ConDetectiveTorpe : AbsDectective
     {
         bool ocupado=false;
+        string nombre;
 
         public ConDetectiveTorpe(string nombre ,IEfectivoDeGot sucesor) : base(sucesor)
         {
-            
-           
+            this.nombre = nombre;
+
         }
         public override void DenunciaAsesinato()
         {
             if (ocupado!=true)
             {
-                Console.WriteLine("el detective " + nombre + " Llego a la ecena del crimen");
+                Console.WriteLine("el detective " + nombre + " Llego a la ecena del crimen --no parece muy atento...");
                 ocupado = true;
 
                 investigacion = new ConInvestigacionTorpe();
@@ -101,6 +119,7 @@ namespace Proyecto_2._0
             }
 
         }
+        
 
     }
     #endregion
@@ -145,18 +164,33 @@ namespace Proyecto_2._0
                 base.DenunciaRobo();
             }
         }
-       
+        public override void DenunciaDisturbiosCallejeros()
+        {
+            AManejador.OficialesDisturbios.Add(this);
+            int Efectivos = OficialesDisturbios.Count;
+            
+            if (Efectivos < 10)
+            {
+                Console.WriteLine("llego Miembro de las fuerzas especiales " + nombre + " esperamos refuersos nos faltan " + (10 - Efectivos).ToString() + " para poder continuar");
+                base.DenunciaDisturbiosCallejeros();
+            }
+            else
+            {
+                Console.WriteLine("Con la llegada del Miembro de las fuerzas especiales " + nombre + " llegaron 10 miembros la situacion esta siendo manejada");
+                SeresolvioElProblema = true;
+                OficialDeAtencion.DenunciaDisturbiosCallejeros();
+
+            }
+        }
+
+
     }
     #endregion
     #region
     class ConOficialAtencion : AManejador
     {
         private string nombre;
-       
-        
         private IEfectivoDeGot Susesor;
-
-
         public ConOficialAtencion(string nombre, IEfectivoDeGot susesor) : base (susesor)
         {          
             this.nombre = nombre;
@@ -226,12 +260,14 @@ namespace Proyecto_2._0
         }
         public override void DenunciaDisturbiosCallejeros()
         {
-            if (Susesor == null)
+            if (SeresolvioElProblema)
             {
-                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudieron completar Los disturbios callejeros");
+                Console.WriteLine("aqui oficial de atencion" + nombre + " La denuncia puedo ser atendida los oficiales estan resolviendo el probelema");
+                
             }
             else
             {
+                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudieron completar Los disturbios callejeros");
                 base.DenunciaDisturbiosCallejeros();
             }
         }
@@ -246,9 +282,6 @@ namespace Proyecto_2._0
                 Console.WriteLine("Lamento informar que no contamos con recursos para solucionar el caso de secuestro... no contamos con los recursos para hacer los");
             }
         }
-      
-
-
 
     }
     #endregion
@@ -317,9 +350,23 @@ namespace Proyecto_2._0
         {
             Console.WriteLine("Atendiendo Amenaza de Bomba");
         }
-        override public void DenunciaDisturbiosCallejeros()
+        public override void DenunciaDisturbiosCallejeros()
         {
-            Console.WriteLine("Atendiendo Disturbios Callejeros");
+            AManejador.OficialesDisturbios.Add(this);
+            int Efectivos = OficialesDisturbios.Count;
+            
+            if (Efectivos < 10)
+            {
+                Console.WriteLine("llego el oficial " + nombre + " esperamos refuersos ,nos faltan " + (10 - Efectivos).ToString() +" para poder continuar");
+                base.DenunciaDisturbiosCallejeros();
+            }
+            else
+            {
+                Console.WriteLine("Con la llegada del oficial " + nombre + " llegaron 10 miembros la situacion esta siendo manejada");
+                SeresolvioElProblema = true;
+                OficialDeAtencion.DenunciaDisturbiosCallejeros();
+
+            }
         }
         override public void DenunciaRobo()
         {
@@ -397,6 +444,24 @@ namespace Proyecto_2._0
             Console.WriteLine("El perito "+nombre+"se acerco al lugar");
             base.DenunciaSecuestro();
         }
+        public override void DenunciaDisturbiosCallejeros()
+        {
+            AManejador.OficialesDisturbios.Add(this);
+            int Efectivos = OficialesDisturbios.Count;
+            
+            if (Efectivos < 10)
+            {
+                 Console.WriteLine("llego el perito " + nombre + " esperamos refuersos ,nos faltan " + (10 - Efectivos).ToString() +" para poder continuar");
+                base.DenunciaDisturbiosCallejeros();
+            }
+            else
+            {
+                Console.WriteLine("Con la llegada del perito " + nombre + " llegaron 10 miembros la situacion esta siendo manejada");
+                SeresolvioElProblema = true;
+                OficialDeAtencion.DenunciaDisturbiosCallejeros();
+
+            }
+        }
     }
     //Policia Cientifica
     #endregion
@@ -445,6 +510,24 @@ namespace Proyecto_2._0
         {
             Console.WriteLine("El miembro de la policia cientifica " + nombre + "se acerco al lugar");
             base.DenunciaSecuestro();
+        }
+        public override void DenunciaDisturbiosCallejeros()
+        {
+            AManejador.OficialesDisturbios.Add(this);
+            int Efectivos = OficialesDisturbios.Count;
+            
+            if (Efectivos < 10)
+            {
+                Console.WriteLine("llego el Miembro de sa policia cientifica " + nombre + " esperamos refuersos ,nos faltan " + (10 - Efectivos).ToString() + " para poder continuar");
+                base.DenunciaDisturbiosCallejeros();
+            }
+            else
+            {
+                Console.WriteLine("Con la llegada del Miembro de sa policia cientifica " + nombre + " llegaron 10 miembros la situacion esta siendo manejada");
+                SeresolvioElProblema = true;
+                OficialDeAtencion.DenunciaDisturbiosCallejeros();
+
+            }
         }
     }
     #endregion

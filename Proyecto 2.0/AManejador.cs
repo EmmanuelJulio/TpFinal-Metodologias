@@ -18,6 +18,7 @@ namespace Proyecto_2._0
         public static int ContComisarioInspector = 0;
         public static List<IEfectivoDeGot> ListaEfectivos = new List<IEfectivoDeGot>();
         public static IEfectivoDeGot OficialDeAtencion=null;
+        public static List<IEfectivoDeGot> OficialesDisturbios = new List<IEfectivoDeGot>();
         //IEfectivoDeGot _sucesor;
        
         string nombre;
@@ -35,7 +36,7 @@ namespace Proyecto_2._0
         }
         virtual public void DenunciaAccidente()
         {
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
             if (Efectivo != null)
             {
                 if (SeresolvioElProblema == true)
@@ -51,7 +52,7 @@ namespace Proyecto_2._0
         }
         virtual public void DenunciaAmenazadeBomba()
         {
-            Thread.Sleep(1000);
+           // Thread.Sleep(1000);
             if (Efectivo != null)
             {
                 if (SeresolvioElProblema == true)
@@ -67,7 +68,7 @@ namespace Proyecto_2._0
         }
         virtual public void DenunciaAsesinato()
         {
-            Thread.Sleep(1000);
+          //  Thread.Sleep(1000);
             if (Efectivo != null)
             {
                 if (SeresolvioElProblema == true)
@@ -85,7 +86,7 @@ namespace Proyecto_2._0
         }
         virtual public void DenunciaDisturbiosCallejeros()
         {
-            Thread.Sleep(1000);
+           // Thread.Sleep(1000);
             if (Efectivo != null)
             {
                 if (SeresolvioElProblema == true)
@@ -101,7 +102,7 @@ namespace Proyecto_2._0
         }
         virtual public void DenunciaRobo()
         {
-            Thread.Sleep(1000);
+           // Thread.Sleep(1000);
             if (Efectivo != null)
             {
                 if (SeresolvioElProblema == true)
@@ -118,7 +119,7 @@ namespace Proyecto_2._0
         }
         virtual public void DenunciaSecuestro()
         {
-            Thread.Sleep(1000);
+          //  Thread.Sleep(1000);
             if (Efectivo != null)
             {
                 if (SeresolvioElProblema == true)
