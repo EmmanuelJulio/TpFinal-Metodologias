@@ -59,13 +59,14 @@ namespace Proyecto_2._0
             return of;
         }
     }
+    
     class FabricaDeDetectiveM : FabricaDeEfectivos
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            ConDetectiveMeticuloso of = new ConDetectiveMeticuloso(nombre, siguiente);
-            AManejador.ListaEfectivos.Add(of);
-            return of;
+            ProxyDetective Dsy = new ProxyDetective(nombre, siguiente, 1);
+            AManejador.ListaEfectivos.Add(Dsy);
+            return Dsy;
             // Detective que lleva a cabo una investigación minuiciosa 
             
         }
@@ -74,9 +75,9 @@ namespace Proyecto_2._0
     {
         override protected IEfectivoDeGot crear(string nombre, IEfectivoDeGot siguiente)
         {
-            ConDetectiveTorpe of = new ConDetectiveTorpe(nombre, siguiente);
-            AManejador.ListaEfectivos.Add(of);
-            return of;
+            ProxyDetective Dsy = new ProxyDetective(nombre, siguiente, 2);
+            AManejador.ListaEfectivos.Add(Dsy);
+            return Dsy;
             // Detective que lleva a cabo una investigación desprolija
             
         }
@@ -87,9 +88,14 @@ namespace Proyecto_2._0
         {
             // Detective que lleva a cabo una investigación al estilo Scotland Yard
             // Deberá usar la clase InvestigacionAlEstiloScotlandYard provista más abajo
-            ConDetectiveSCotlandYard Dsy = new ConDetectiveSCotlandYard(nombre,siguiente);
+            ProxyDetective Dsy = new ProxyDetective(nombre,siguiente,3);
             AManejador.ListaEfectivos.Add(Dsy);
             return Dsy;
         }
+       
+
     }
+   
+
 }
+

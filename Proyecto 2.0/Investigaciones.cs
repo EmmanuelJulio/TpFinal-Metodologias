@@ -114,4 +114,76 @@ namespace Proyecto_2._0
             Console.WriteLine("Se revisa a la victima de forma casual toca el cuerpo con las manos desnudas");
         }
     }
+    class adpater : AbsInvestigacion
+    {
+        InvestigacionAlEstiloScotlandYard nb;
+        public adpater(InvestigacionAlEstiloScotlandYard nb)
+        {
+            this.nb = nb;
+        }
+        
+        public override void entrevistaTestigos()
+        {
+            nb.interviewWitness();
+        }
+
+        public override void formulaHipotesis()
+        {
+            nb.formulateHypothesis();
+        }
+
+        public override void realizaAcusacion()
+        {
+            nb.toAcusse();
+        }
+
+        public override void reccorerCrimen()
+        {
+            nb.tourCrimeScene();
+        }
+
+        public override void revisarVictima()
+        {
+            nb.inspectVictim();
+        }
+    }
+    class ProxyDetective : AbsDectective
+    {
+        int Tipo;
+        IEfectivoDeGot susesor;
+        string Nombre;
+        AbsDectective Detective;
+        public ProxyDetective(string nombre, IEfectivoDeGot sucesor,int tipo) : base(nombre, sucesor)
+        {
+            this.susesor = sucesor;
+            this.Nombre = nombre;
+            this.Tipo =tipo;
+            
+        }
+        public override void DenunciaAsesinato()
+        {
+            switch (Tipo)
+            {
+                case 1:
+                    this.Detective = new ConDetectiveMeticuloso(Nombre, susesor);
+                    Detective.DenunciaAsesinato();
+                    ocupado = true;
+                    break;
+                case 2:
+                    this.Detective = new ConDetectiveTorpe(Nombre, susesor);            
+                    Detective.DenunciaAsesinato();
+                  ocupado=true;
+                    break;
+                case 3:
+                    this.Detective = new ConDetectiveSCotlandYard(Nombre, susesor);
+                    Detective.DenunciaAsesinato();
+                    ocupado = true;
+                    
+                    break;
+            }
+
+            
+        }
+
+    }
 }

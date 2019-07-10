@@ -12,6 +12,7 @@ namespace Proyecto_Final
 
         public ConDetectiveMeticuloso(AManejador sucesor) : base(sucesor)
         {
+            
             this.investigacion = new ConInvestigacionMinusiosa();
         }
     }

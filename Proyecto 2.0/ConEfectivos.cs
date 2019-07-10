@@ -65,12 +65,12 @@ namespace Proyecto_2._0
     #region
     class ConDetectiveMeticuloso : AbsDectective
     {
-        bool ocupado = false;   
-
+       public bool ocupado = false;     
         public ConDetectiveMeticuloso(string nombre,IEfectivoDeGot sucesor) : base(sucesor) 
         {
             this.nombre = nombre;
             this.investigacion = new ConInvestigacionMinusiosa();
+           
         }
         public override void DenunciaAsesinato()
         {
@@ -78,9 +78,10 @@ namespace Proyecto_2._0
             {
                 Console.WriteLine("el detective " + nombre + " Llego a la ecena del crimen");
                 ocupado = true;
-
-                investigacion = new ConInvestigacionMinusiosa();
+                
                 investigacion.realizarInvestigacion();
+                SeresolvioElProblema = true;
+                base.DenunciaAsesinato();
             }
             else
             {
@@ -94,13 +95,14 @@ namespace Proyecto_2._0
     #region
     class ConDetectiveTorpe : AbsDectective
     {
-        bool ocupado=false;
+        public bool ocupado=false;
         string nombre;
 
         public ConDetectiveTorpe(string nombre ,IEfectivoDeGot sucesor) : base(sucesor)
         {
             this.nombre = nombre;
-
+            investigacion = new ConInvestigacionTorpe();
+            
         }
         public override void DenunciaAsesinato()
         {
@@ -108,9 +110,9 @@ namespace Proyecto_2._0
             {
                 Console.WriteLine("el detective " + nombre + " Llego a la ecena del crimen --no parece muy atento...");
                 ocupado = true;
-
-                investigacion = new ConInvestigacionTorpe();
                 investigacion.realizarInvestigacion();
+                SeresolvioElProblema = true;
+                base.DenunciaAsesinato();
             }
             else
             {
@@ -249,13 +251,13 @@ namespace Proyecto_2._0
         }
         public override void DenunciaAsesinato()
         {
-            if (Susesor == null )
+            if (SeresolvioElProblema)
             {
-                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudo completar la De nuncia de asecinato");
+                Console.WriteLine("aqui oficial de atencion" + nombre + " se resolvio el crimen ");
             }
             else
             {
-                base.DenunciaAsesinato();
+                Console.WriteLine("aqui oficial de atencion" + nombre + " lamento que no se pudo completar la De nuncia de asecinato");
             }
         }
         public override void DenunciaDisturbiosCallejeros()
@@ -532,16 +534,51 @@ namespace Proyecto_2._0
     }
     #endregion
     #region
-    class ConDetectiveSCotlandYard : AManejador
+    class ConDetectiveSCotlandYard : AbsDectective
     {
         string nombre;
-        public ConDetectiveSCotlandYard(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
-        {
+        public bool ocupado = false;
 
+        public ConDetectiveSCotlandYard(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
+        { 
             this.nombre = nombre;
+            investigacion = new adpater(new InvestigacionAlEstiloScotlandYard());
+            
         }
+        public override void DenunciaAsesinato()
+        {
+            if (ocupado != true)
+            {
+                Console.WriteLine("el detective " + nombre + " Llego a la ecena del crimen es un detective Ingles");
+                ocupado = true;
+                investigacion.realizarInvestigacion();
+                SeresolvioElProblema = true;
+                base.DenunciaAsesinato();
+            }
+            else
+            {
+                Console.WriteLine("el detective " + nombre + "se encuentra ocupado");
+                base.DenunciaAsesinato();
+            }
+        }
+
+        //class Proxy : AbsDectective
+        //{
+        //    string tipo;
+        //    AbsDectective Detective;
+
+        //    public Proxy(string nombre, IEfectivoDeGot sucesor, string tipo) : base(nombre, sucesor)
+        //    {
+        //        this.tipo = tipo;
+        //        this.nombre = nombre;
+        //    }
+
+        //    public override void DenunciaAsesinato()
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //}
+        #endregion
+
     }
-    #endregion
-    
-    
 }

@@ -11,6 +11,8 @@ namespace Proyecto_Final
         public AbsDectective(AManejador sucesor) : base(sucesor)
         {
         }
+
+
         protected AbsInvestigacion investigacion;
         override public void DenunciaAsesinato()
         {

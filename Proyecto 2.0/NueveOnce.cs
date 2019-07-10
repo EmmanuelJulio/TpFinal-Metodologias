@@ -16,7 +16,7 @@ namespace Proyecto_2._0
             eg = FabricaDeEfectivos.crear("Cientifica", "Daenerys Targaryen", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Arya Stark", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Jon Snow", eg);
-            eg = FabricaDeEfectivos.crear("DetectiveM", "Eddard Stark", eg);
+          //  eg = FabricaDeEfectivos.crear("DetectiveM", "Eddard Stark", eg);
             eg = FabricaDeEfectivos.crear("FuezaEspecial", "Jaime Lannister", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Cersei Lannister", eg);
             eg = FabricaDeEfectivos.crear("Comisario", "Sansa Stark", eg);
@@ -25,7 +25,7 @@ namespace Proyecto_2._0
             eg = FabricaDeEfectivos.crear("DetectiveSY", "Sam Tarly", eg);
             eg = FabricaDeEfectivos.crear("FuezaEspecial", "Varys", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Bran Stark", eg);
-            eg = FabricaDeEfectivos.crear("DetectiveD", "Petyr Baelish", eg);
+          //  eg = FabricaDeEfectivos.crear("DetectiveD", "Petyr Baelish", eg);
             eg = FabricaDeEfectivos.crear("Oficial", "Tywin Lannister", eg);
 
 
@@ -82,12 +82,13 @@ namespace Proyecto_2._0
                         break;
                     case 2:
                         Console.WriteLine("");
-                        Console.WriteLine("L@ encontraremos tranquilizate, nuestros ajentes trabajaran en ello");
-                        eg.DenunciaAsesinato();
+                        Console.WriteLine("Atenderemos el homicidio ,procure no adulterar la zona del crimen");
+                       eg.DenunciaAsesinato();
+
                         break;
                     case 3:
                         Console.WriteLine("");
-                        Console.WriteLine("Atenderemos el homicidio ,procure no adulterar la zona del crimen");
+                        Console.WriteLine("L@ encontraremos tranquilizate, nuestros ajentes trabajaran en ello");
                         eg.DenunciaSecuestro();
                         break;
                     case 4:

@@ -9,11 +9,12 @@ namespace Proyecto_2._0
      abstract class AbsDectective : AManejador
     {
         protected string nombre;
+        protected bool ocupado;
         public AbsDectective(string nombre, IEfectivoDeGot sucesor) : base(sucesor)
         {
             this.nombre = nombre;
         }
-
+        
         protected AbsDectective(IEfectivoDeGot sucesor) : base(sucesor)
         {
             this.sucesor = sucesor;
@@ -22,11 +23,5 @@ namespace Proyecto_2._0
         protected AbsInvestigacion investigacion;
         private IEfectivoDeGot sucesor;
 
-        override public void DenunciaAsesinato()
-        {
-            Console.WriteLine("Atendiendo Asesinato");
-            investigacion = new ConInvestigacionMinusiosa();
-            investigacion.realizarInvestigacion();
-        }
     }
 }
